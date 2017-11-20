@@ -52,7 +52,7 @@ public class DemoPayTestJunit extends BaseJunitTest {
         data.setOrderId(MakeOrderNum.makeOrderNum());//订单号
         data.setMerchantId(Constant.MERCHANT_ID);//商户号
         data.setTrxType(3);//结算 3,"D0"
-        data.setAmount(50L);//交易金额  单位 分
+        data.setAmount(500L);//交易金额  单位 分
         data.setType(2); // 2 借记卡
         data.setBankCode("CCB");
         data.setName("商户名称");
@@ -84,7 +84,7 @@ public class DemoPayTestJunit extends BaseJunitTest {
     public void proxyPay() throws Exception {
         ProxyPayDto dto = new ProxyPayDto();
         dto.setOrderId(UUID.randomUUID().toString());
-        dto.setAmount(100L);
+        dto.setAmount(1L);
         dto.setMerchantId(Constant.MERCHANT_ID);
         dto.setTimestamp(System.currentTimeMillis());
         dto.setMerchantKey(Constant.MERCHANT_KEY);
