@@ -7,6 +7,7 @@ import com.jhz.demo.common.util.MakeOrderNum;
 import com.jhz.demo.dto.CommonDto;
 import com.jhz.demo.dto.GateWayDto;
 import com.jhz.demo.dto.ProxyPayDto;
+import com.jhz.demo.dto.QrCodeDto;
 import com.jhz.demo.service.DemoService;
 import org.junit.Test;
 
@@ -52,9 +53,9 @@ public class DemoPayTestJunit extends BaseJunitTest {
         data.setOrderId(MakeOrderNum.makeOrderNum());//订单号
         data.setMerchantId(Constant.MERCHANT_ID);//商户号
         data.setTrxType(3);//结算 3,"D0"
-        data.setAmount(500L);//交易金额  单位 分
+        data.setAmount(2000L);//交易金额  单位 分
         data.setType(2); // 2 借记卡
-        data.setBankCode("CCB");
+        data.setBankCode("ICBC");
         data.setName("商户名称");
         data.setBody("商品名称");
         data.setMerchantKey(Constant.MERCHANT_KEY);//商户key
@@ -84,14 +85,14 @@ public class DemoPayTestJunit extends BaseJunitTest {
     public void proxyPay() throws Exception {
         ProxyPayDto dto = new ProxyPayDto();
         dto.setOrderId(UUID.randomUUID().toString());
-        dto.setAmount(1L);
+        dto.setAmount(100L);
         dto.setMerchantId(Constant.MERCHANT_ID);
         dto.setTimestamp(System.currentTimeMillis());
         dto.setMerchantKey(Constant.MERCHANT_KEY);
         dto.setTrxType(3);//默认3
         dto.setNotifyUrl("http://www.baidu.com");
         dto.setAcctType(1);// 1对私  2对公
-        dto.setType(2);//钱包类型 2 网关支付 8 微信  10 QQ钱包
+        dto.setType(2);//钱包类型 2 :网关支付 8 :微信  10 :QQ钱包  13 :银联二维码
         dto.setAcctName("黎士文");
         dto.setAcctNo("6217003760027926781");
         dto.setBankName("建设银行");
@@ -104,6 +105,27 @@ public class DemoPayTestJunit extends BaseJunitTest {
         dto.setCertificateCode("500236199307243418");
 
         JSONObject result = demoService.proxyPay(dto);
+        logger.info("{}", result);
+    }
+
+    /**
+     * 银联扫码
+     *
+     * @throws Exception
+     */
+    @Test
+    public void unionPay() throws Exception {
+        QrCodeDto dto = new QrCodeDto();
+        dto.setOrderId(UUID.randomUUID().toString());
+        dto.setAmount(100L);
+        dto.setMerchantId(Constant.MERCHANT_ID);
+        dto.setTimestamp(System.currentTimeMillis());
+        dto.setMerchantKey(Constant.MERCHANT_KEY);
+        dto.setProductName("测试商品");
+        //付款码
+//        dto.setTerminalId();
+        dto.setNotifyUrl("http://pay.hezhongpay.com");
+        JSONObject result = demoService.unionQrCodePay(dto);
         logger.info("{}", result);
     }
 

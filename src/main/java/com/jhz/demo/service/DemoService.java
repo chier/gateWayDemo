@@ -7,6 +7,7 @@ import com.jhz.demo.common.util.Bean2Map;
 import com.jhz.demo.common.util.HttpUtil;
 import com.jhz.demo.dto.CommonDto;
 import com.jhz.demo.dto.GateWayDto;
+import com.jhz.demo.dto.QrCodeDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -67,4 +68,21 @@ public class DemoService {
         logger.info("respStr:{}", respStr);
         return JSONObject.parseObject(respStr);
     }
+
+    /**
+     * 银联二维码
+     * @param dto
+     * @return
+     * @throws Exception
+     */
+    public JSONObject unionQrCodePay(QrCodeDto dto) throws Exception {
+        Map<String, Object> params = Bean2Map.Entity2Map(dto);
+        String signBefore = SignUtils.signBefore(params);
+        String sign = SignUtils.sign(signBefore, Constant.MERCHANT_SECRET);
+        params.put("sign", sign);
+        String respStr = HttpUtil.post(Constant.HOST + Constant.UNION_PAY_URL, params);
+        logger.info("respStr:{}", respStr);
+        return JSONObject.parseObject(respStr);
+    }
+
 }

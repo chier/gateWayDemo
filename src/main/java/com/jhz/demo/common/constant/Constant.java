@@ -30,6 +30,10 @@ public abstract class Constant {
     public static final String ORDER_QUERY_URL="/order/query";
 
 
+    //银联二维码
+    public static final String UNION_PAY_URL = "/union/qrcode";
+
+
     //代付
     public static final String PROXY_PAY_URL = "/proxy/pay";
 

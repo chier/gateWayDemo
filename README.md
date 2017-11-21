@@ -30,7 +30,6 @@
 
 *  ## 接口列表
 
-
 - **网关支付接口**
 
 - **代付接口**
@@ -39,7 +38,7 @@
 
 - **订单完成通知**
 
-
+- **银联二维码接口**
 
 * ## 接口说明
 
@@ -225,6 +224,46 @@
 ***
 
 
+
+* 5 银联二维码接口
+
+    * 请求地址
+
+	> http://host/union/qrcode
+
+
+    * 请求参数
+
+| 参数   | 说明| 是否必传 |
+| ----   | --- | --- |
+| orderId |订单号 | y|
+| merchantId	| 商户号 | y|
+| amount	| 订单金额 单位 分 |y |
+| productName	| 商品名|y |
+| terminalId | 付款码 有值主扫 、为空时 生成码 |n |
+| notifyUrl  | 通知url | y |
+| merchantKey | 通商户key  | y  |
+| timestamp | 时间戳|y |
+| sign | 签名|y |
+
+    * 响应结果
+
+
+| 参数   | 说明|
+| ----   | --- |
+| orderId |订单号 | y|
+| merchantId	| 商户号 | y|
+| amount	| 订单金额 单位 分 |y |
+| productName	| 商品名|y |
+| terminalId | 付款码 有值主扫 、为空时 生成码 |n |
+| notifyUrl  | 通知url  | y |
+| url | 支付地址 |
+| timestamp | 时间戳|
+| code	| 响应码  |  
+| msg	| 响应消息 |  
+| sign	| 签名 |
+
+***
 
 
 
