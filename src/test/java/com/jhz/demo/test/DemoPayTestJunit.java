@@ -110,7 +110,7 @@ public class DemoPayTestJunit extends BaseJunitTest {
 
     /**
      * 银联扫码
-     *
+     * 主扫  反扫
      * @throws Exception
      */
     @Test
