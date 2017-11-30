@@ -145,7 +145,7 @@
 | orderId |订单号 |
 | merchantId	| 商户号 |
 | amount	| 订单金额|
-| trxType	| 交易类型  默认传3   T0(1,"T0"), T1(2,"T1"), D0(3,"D0");|
+| trxType	| 交易类型  默认传3    T1(2,"T1"), D0(3,"D0");|
 | acctType	| 渠道类型 1对私2对公|
 | acctName	| 收款人姓名|
 | acctNo	| 收款人账号|
