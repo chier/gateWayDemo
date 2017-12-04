@@ -119,7 +119,7 @@
 | amount	| 订单金额|y |
 | trxType	| 交易类型  默认传3   T1(2,"T1"), D0(3,"D0");|y |
 | acctType	| 渠道类型 1对私2对公|y |
-| type	| 钱包类型 8 微信  10 QQ钱包 |y |
+| type	| 钱包类型 2 网关 8 微信  10 QQ钱包 |y |
 | acctName	| 收款人姓名|y |
 | acctNo	| 收款人账号|y |
 | bankName	| 开户行名称|y |
@@ -147,6 +147,7 @@
 | amount	| 订单金额|
 | trxType	| 交易类型  默认传3    T1(2,"T1"), D0(3,"D0");|
 | acctType	| 渠道类型 1对私2对公|
+| type	| 钱包类型 2 网关 8 微信  10 QQ钱包 |y |
 | acctName	| 收款人姓名|
 | acctNo	| 收款人账号|
 | bankName	| 开户行名称|
