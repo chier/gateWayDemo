@@ -117,7 +117,7 @@
 | orderId |订单号 | y|
 | merchantId	| 商户号 | y|
 | amount	| 订单金额|y |
-| trxType	| 交易类型  默认传3   T0(1,"T0"), T1(2,"T1"), D0(3,"D0");|y |
+| trxType	| 交易类型  默认传3   T1(2,"T1"), D0(3,"D0");|y |
 | acctType	| 渠道类型 1对私2对公|y |
 | type	| 钱包类型 8 微信  10 QQ钱包 |y |
 | acctName	| 收款人姓名|y |
