@@ -36,7 +36,7 @@
 **传输协议**　
 
 * 1 http
-    *   将除“sign”外的所有不为空(""或null)参数按key进行字典升序排列，将api_name和排序后的参数(key=value)用&拼接起来。
+    *   
 * 2 数据交互
     *  post 提交 ,返回json
 
