@@ -259,7 +259,7 @@
 | msg	| 响应消息 |  
 | sign	| 签名 |
 
-   > 使用request  key 直接获取
+   > 使用request  key 直接获取,收到通知后返回  true 字符串,
    
 
 ***
