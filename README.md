@@ -140,7 +140,7 @@
 
     * 请求地址
 
-	> http://host/proxy/pay
+	> http://host/proxy/pay/v2
 
 
     * 请求参数
