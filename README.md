@@ -89,7 +89,7 @@
 
     * 请求地址
 
-	> http://host/gate/way/order/down
+	> http://域名/gate/way/order/down
 
 
     * 请求参数
@@ -140,7 +140,7 @@
 
     * 请求地址
 
-	> http://host/proxy/pay/v2
+	> http://域名/proxy/pay/v2
 
 
     * 请求参数
@@ -212,7 +212,7 @@
 
  * 请求地址
 
-	> http://host/order/query
+	> http://域名/order/query
 
  * 请求参数
 
@@ -270,7 +270,7 @@
 
     * 请求地址
 
-	> http://host/union/qrcode
+	> http://域名/union/qrcode
 
 
     * 请求参数
