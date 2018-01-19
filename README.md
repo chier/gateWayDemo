@@ -260,6 +260,30 @@
 | sign	| 签名 |
 
    > 使用request  key 直接获取,收到通知后返回  true 字符串,
+  
+  ```java
+  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		String merchantId=request.getParameter("merchantId");
+		String orderId=request.getParameter("orderId");
+		String code=request.getParameter("code");
+		String msg=request.getParameter("msg");
+		String amount=request.getParameter("amount");
+		String merchantKey=request.getParameter("merchantKey");
+		String timestamp=request.getParameter("timestamp");
+		String sign=request.getParameter("sign");
+		
+		if(验证签名){
+			if("0000".equals(code)){
+				//成功 处理逻辑
+			}else if("0001".equals(code)){
+				//失败 处理逻辑
+			}else{
+				//其它 处理逻辑
+			}
+		}
+	}
+```
    
 
 ***
