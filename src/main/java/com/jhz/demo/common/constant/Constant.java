@@ -35,6 +35,6 @@ public abstract class Constant {
 
 
     //代付
-    public static final String PROXY_PAY_URL = "/proxy/pay";
+    public static final String PROXY_PAY_URL = "/proxy/pay/v2";
 
 }
