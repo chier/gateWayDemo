@@ -262,7 +262,12 @@
    > 使用request  key 直接获取,收到通知后返回  true 字符串,
   
   ```java
-  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        /**
+	 * 通知post 请求，请商户做好防重处理
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//设置编码
 		request.setCharacterEncoding("UTF-8");
 		String merchantId=request.getParameter("merchantId");
 		String orderId=request.getParameter("orderId");
@@ -282,6 +287,12 @@
 				//其它 处理逻辑
 			}
 		}
+		//返回true 收到请求，停止通知
+		PrintWriter write=response.getWriter();
+		write.print("true");
+		write.flush();
+		write.close();
+		
 	}
 ```
    
